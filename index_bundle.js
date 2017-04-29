@@ -9556,7 +9556,7 @@ var Application = function (_React$Component) {
                 _react2.default.createElement(
                     'h1',
                     null,
-                    'Hello World'
+                    'Hello World 2'
                 )
             );
         }
