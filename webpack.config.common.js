@@ -22,10 +22,13 @@ module.exports = {
         rules: [
             {test: /\.js$/, use: 'babel-loader', exclude: /node_modules/},
             {test: /\.jsx$/, use: 'babel-loader', exclude: /node_modules/},
-            {test: /\.scss$/, use: [{loader: 'style-loader'}, {loader: 'css-loader'}, {loader: 'sass-loader'}]},
+            {test: /\.scss$/, use: [{loader: 'style-loader'}, {loader: 'css-loader'}, {loader: 'sass-loader'}]}, // TODO: Maybe not needed at all
             {test: /\.(jpg|png|gif)$/, use: 'file-loader'},
             {test: /\.(woff|woff2|eot|ttf|svg)$/, use: {loader: 'url-loader', options: {limit: 100000}}}
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
     },
     plugins: [
         htmlWebpackPlugin
