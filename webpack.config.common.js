@@ -22,9 +22,9 @@ module.exports = {
         rules: [
             {test: /\.js$/, use: 'babel-loader', exclude: /node_modules/},
             {test: /\.jsx$/, use: 'babel-loader', exclude: /node_modules/},
-            {test: /\.scss$/, use: [{loader: 'style-loader'}, {loader: 'css-loader'}, {loader: 'sass-loader'}]}, // TODO: Maybe not needed at all
-            {test: /\.(jpg|png|gif)$/, use: 'file-loader'},
-            {test: /\.(woff|woff2|eot|ttf|svg)$/, use: {loader: 'url-loader', options: {limit: 100000}}}
+            {test: /\.(jpe?g|gif)$/i, exclude: /node_modules/, use: {loader: 'file-loader', options: {name: 'images/[name].[hash:6].[ext]'}}},
+            {test: /favicon\.ico$/, use: {loader: 'file-loader', options: {name: '[name].[ext]'}}},
+            {test: /\.(woff|woff2|eot|ttf|svg|png)$/, exclude: /node_modules/, use: {loader: 'url-loader', options: {limit: 100000, name: 'images/[name].[hash:6].[ext]'}}}
         ]
     },
     resolve: {
